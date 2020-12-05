@@ -28,12 +28,9 @@ jobs:
         with:
           # Yarn command
           cmd: install
-          
-        -name: Creating Build
+      -name: Creating Build
          run: yarn build
-         
-        -name: Installing Surge
+      -name: Installing Surge
          run: npm install --globla surge
-         
-         -name: Deploying on surge
+      -name: Deploying on surge
           run: surge./build http://bootcampzeereact1.surge.sh/ --token ${{secrets.SURGE_TOKEN}}
